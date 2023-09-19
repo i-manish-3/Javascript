@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p id="time"></p>
+    </div>
+    <script>
+        let a;
+        let time;
+        let text;
+        const options = {weekday:'long',year:'numeric',month:'long',day:'numeric'};
+        setInterval(()=>
+        {
+        a = new Date();
+        text = a.toLocaleString(undefined,options);
+        time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+        document.getElementById('time').innerHTML = "Date is " +time + "<br>on "+text;
+        },1000);
+    </script>
+</body>
+</html>
